@@ -18,18 +18,18 @@ https://about.me/wpjunior
 - Biker
 - Desenvolvedor na Globo.com há 3 anos
 
-* Caracteristicas de uma configuração
+* Características de uma configuração
 
 - Descreve o comportamento
 - Infrequentemente alterada
 - Aplicações modificam seu comportamento
 
-* Imaginemos que possuimos uma aplicação escalada horizontamente 100 vezes em diferentes lugares
-* E cada dessas instancias recebem uma carga de transações muito alta
+* Imaginemos que possuimos uma aplicação escalada horizontalmente 100 vezes em diferentes lugares
+* E cada dessas instâncias recebem uma carga de transações muito alta
 
-* Como lidariamos com a consulta e escrita de configurações ?
+* Como lidaríamos com a consulta e escrita de configurações ?
 
-* Not better approach: variáveis de ambiente
+* Not the better approach: variáveis de ambiente
 .image env-variables.png
 
 * Good to handle
@@ -37,7 +37,7 @@ https://about.me/wpjunior
 
 * Bad to handle
 - Cordenar 100 restarts para quando houver mudanças
-- a aplicação deve fazer *gracefull* *restart* não sacrificando nenhuma transação em andamento
+- A aplicação deve fazer *gracefull* *restart* não sacrificando nenhuma transação em andamento
 
 * Not better approach: consultar no banco de dados
 .image database-query.png
@@ -50,17 +50,17 @@ https://about.me/wpjunior
 - criamos um gargalo.
 - too many: 304 not modified content.
 
-* Not better approach: consultar no banco de dados + sistema de cache
+* Not the better approach: consultar no banco de dados + sistema de cache
 .image database-cache.png
 
 * Good to handle
 - o cache garantirá velocidade no acesso.
 
 * Bad to handle
-- Inconsistencia temporal
+- Inconsistência temporal
 - se a aplicação é crítica...
 
-* Better approach: escolha um banco de dados especializados em configurações
+* Better approach: escolha um banco de dados especializado em configurações
 .image database-config.png
 
 * O que é o etcd
@@ -69,18 +69,18 @@ https://about.me/wpjunior
 - Utilizado como storage do kubernetes
 - Key/value store
 - Persistente
-- Cluster Tolerante a falhas
+- Cluster tolerante a falhas
 
 * O que é o etcd
-- Consistencia e via algoritmo Raft
+- Consistência via algoritmo Raft
 - MVCC Multiversion concurrency control
 - 15K stars on github
-- utilizado em outras empresas
+- Utilizado em outras empresas
 
 * Protocolo debaixo dos panos
 
 - GRPC + HTTP (v3 da API)
-- Restful + JSON + HTTP (v2 da API)
+- RESTful + JSON + HTTP (v2 da API)
 
 * Raft
 
